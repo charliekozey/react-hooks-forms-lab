@@ -5,10 +5,6 @@ import Item from "./Item";
 
 function ShoppingList({ items }) {
   const [selectedCategory, setSelectedCategory] = useState("All");
-  const [search, setSearch] = useState("");
-  const [newName, setNewName] = useState("")
-  const [newCategory, setNewCategory] = useState("Produce")
-  const [itemList, setItemList] = useState(items)
 
   function handleCategoryChange(event) {
     setSelectedCategory(event.target.value);
