@@ -31,7 +31,7 @@
 ![[Controlled component diagram with sibling]](https://curriculum-content.s3.amazonaws.com/react/react-forms/Image_23_FlowchartControlled.png)
 [React docs on controlled components](https://react.dev/learn/sharing-state-between-components#controlled-and-uncontrolled-components)
 
-## How to make a form controlled
+## How to make a controlled form
 Step 1. Create state
 ```js
 const [inputString, setInputString] = useState("")
@@ -57,10 +57,7 @@ Step 4. Add ```onSubmit``` to form
 ```
 - Must do steps 1-3 for each input. Tedious!
 
-## Pair Intervals
-- one step at a time
-
-## Making the process less repetitive with abstraction
+## Abstraction: making the process less repetitive
 - Combine states in a way that makes sense
 	- Create object to initialize state
 ```js
@@ -84,8 +81,14 @@ const [filterState, setFilterState]
 ```
 - Use spread operator to set state to current state object + the amended key-value pair
 ```js
-    setFilterState({
-      ...filterState,
-      [name]: value
-    })
+  function handleChange(event) {
+    const name = event.target.name;
+    let value = event.target.value;
+
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  }
+
 ```
