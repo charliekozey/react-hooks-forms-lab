@@ -34,7 +34,7 @@ function ShoppingList({ items, setItems }) {
     event.preventDefault()
 
     setItems([
-      items,
+      ...items,
       {
         id: uuid(),
         name: nameInput,
