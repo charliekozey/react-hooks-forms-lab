@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import ItemForm from "./ItemForm";
 import Filter from "./Filter";
 import Item from "./Item";
+import { v4 as uuid } from "uuid";
+
 
 function ShoppingList({ items }) {
   const [selectedCategory, setSelectedCategory] = useState("All");
@@ -29,6 +31,7 @@ function ShoppingList({ items }) {
   function handleSubmit(e) {
     e.preventDefault()
     const newItem = {
+      id: uuid(),
       name: newName,
       category: newCategory
     }
